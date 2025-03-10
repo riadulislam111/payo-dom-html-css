@@ -13,7 +13,7 @@
 <header>
     <nav class="flex justify-around items-center"> <img class="w-16" src="./assets/Group.png" alt="">
         <div class="mr-40">
-            <h1 class="text-3xl font-bold">$ 4500</h1>
+            <h1 class="text-3xl font-bold">$ <span id="main-balance">4500</span></h1>
         <p class="border rounded">Available Balance</p>
         </div>
         <button class="btn">Logout</button>
@@ -23,34 +23,35 @@
 <p>Enjoy easy and convenient financial services with us. Cashout charge is low and </p>
 
 <div class="cards grid grid-cols-3 mt-14 gap-2 p-2 cursor-pointer ">
-<div class="box border p-4 text-center rounded-sm">
+<div id="add-money-box" class="box border p-4 text-center rounded-sm hover:bg-sky-200 animate-bounce
+">
     <img class="w-8 mx-auto" src="./assets/wallet1.png" alt="">
     <h3>Add Money</h3>
 </div>
-<div class="box border p-4 text-center rounded-sm">
+<div id="cashout-box" class="box hover:bg-sky-200 animate-bounce border p-4 text-center rounded-sm">
     <img class="w-8 mx-auto" src="./assets/wallet1.png" alt="">
     <h3>Cashout</h3>
 </div>
-<div class="box border p-4 text-center rounded-sm">
+<div class="box border p-4 text-center rounded-sm hover:bg-sky-200 animate-bounce">
     <img class="w-8 mx-auto" src="./assets/wallet1.png" alt="">
     <h3>Transfer Money</h3>
 </div>
-<div class="box border p-4 text-center rounded-sm">
+<div class="box border p-4 text-center rounded-sm hover:bg-sky-200">
     <img class="w-8 mx-auto" src="./assets/wallet1.png" alt="">
     <h3>Get Bonus</h3>
 </div>
-<div class="box border p-4 text-center rounded-sm">
+<div class="box border p-4 text-center rounded-sm hover:bg-sky-200">
     <img class="w-8 mx-auto" src="./assets/wallet1.png" alt="">
     <h3>Pay Bill</h3>
 </div>
-<div class="box border p-4 text-center rounded-sm">
+<div class="box border p-4 text-center rounded-sm hover:bg-sky-200">
     <img class="w-8 mx-auto" src="./assets/wallet1.png" alt="">
     <h3>Transactions</h3>
 </div>
 </div>
 <!-- add money section  -->
-<section>
-<h2>Add Money</h2>
+<section id="add-money">
+<h2 class="font-bold text-center text-blue-700">Add Money</h2>
 <div class="hero bg-base-200">
     
       <div class="card w-full max-w-sm shrink-0 shadow-2xl">
@@ -64,22 +65,30 @@
               </select>
               <fieldset class="fieldset">
                 <label class="fieldset-label">Account Number</label>
-                <input value="" id="account-number"
+                <input value="13131313132" id="account-number"
                   type="number"
                   class="input"
                   placeholder="Enter your number"
                   required
                 />
-                <label id="pin" class="fieldset-label">PIN</label>
-                <input
-                value=""
+              <fieldset class="fieldset">
+                <label class="fieldset-label">Amount</label>
+                <input id="amount"
+                  type="number"
+                  class="input"
+                  placeholder="type your amount"
+                  required
+                />
+                <label class="fieldset-label">PIN</label>
+                <input id="pin"
+                value="1234"
                   type="text"
                   class="input"
                   placeholder="Enter Pin"
                   required
                 />
                 <div><a class="link link-hover">Forgot password?</a></div>
-                <button id="login-btn" class="btn btn-neutral bg-blue-700 border-none mt-4">
+                <button id="add-money" class="btn btn-neutral bg-blue-700 border-none mt-4">
                   Add Money
                 </button>
               </fieldset>
@@ -88,11 +97,46 @@
     </div>
   </div>
 </section>
+
+<!-- Cashout section  -->
+ <section id="cashout" class="">
+  <h1 class="font-bold text-blue-700 text-center">Cash-Out</h1>
+  <fieldset class="fieldset">
+    <label class="fieldset-label">Account Number</label>
+    <input value="13131313132" id="account-number"
+      type="number"
+      class="input"
+      placeholder="Enter your number"
+      required
+    />
+  <fieldset class="fieldset">
+    <label class="fieldset-label">Amount</label>
+    <input id="cashout-amount"
+      type="number"
+      class="input"
+      placeholder="type your amount"
+      required
+    />
+    <label class="fieldset-label">PIN</label>
+    <input id="cashout-pin"
+    value="1234"
+      type="text"
+      class="input"
+      placeholder="Enter Pin"
+      required
+    />
+    <div><a class="link link-hover">Forgot password?</a></div>
+    <button id="cashout-btn" class="btn btn-neutral bg-blue-700 border-none mt-4">
+      Withdraw Money
+    </button>
+  </fieldset>
+ </section>
     </section>
 </header>
     </section>
 
-
-    <!-- <script src="./script/login.js"></script> -->
+<script src="./script/recap.js"></script>
+    <script src="./script/toggle.js"></script>
+    <script src="./script/cashout.js"></script>
 </body>
 </html>
